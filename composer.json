@@ -38,7 +38,10 @@
     "sort-packages": true
   },
   "scripts": {
-    "test": "phpunit"
+    "test": "phpunit",
+    "post-deploy-cmd": [
+      "php spark migrate --all"
+    ]
   },
   "minimum-stability": "beta",
   "prefer-stable": true
