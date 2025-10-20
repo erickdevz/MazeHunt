@@ -17,7 +17,7 @@ class PromotionsPurge extends BaseCommand
         $model = new PromotionModel();
 
         $deleted = $model->where('expires_at <', date('Y-m-d H:i:s'))
-                         ->delete();
+                        ->delete();
 
         CLI::write("Removidos {$deleted} registros expirados.", 'green');
     }
