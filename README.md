@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌀 Maze Hunt — Plataforma de E-Commerce Acessível
+# 🌀 Maze Hunt — Plataforma de Promoções e Ofertas Acessível
 
 [![PHP](https://img.shields.io/badge/PHP-8.0%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
 [![CodeIgniter](https://img.shields.io/badge/CodeIgniter-4-EE4623?style=for-the-badge&logo=codeigniter&logoColor=white)](https://codeigniter.com/)
@@ -10,7 +10,7 @@
 
 </div>
 
-Maze Hunt é um projeto em desenvolvimento voltado para criar uma plataforma de **e-commerce inclusiva e acessível**, com foco em usabilidade, integração com APIs externas e arquitetura escalável.
+**Maze Hunt** é uma plataforma de promoções e ofertas acessível, projetada para reunir cupons, descontos e oportunidades de compras de lojas parceiras como Amazon, Shopee, etc.  
 
 ---
 
