@@ -1,68 +1,125 @@
-# CodeIgniter 4 Application Starter
+<div align="center">
 
-## What is CodeIgniter?
+# 🌀 Maze Hunt — Plataforma de E-Commerce Acessível
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+[![PHP](https://img.shields.io/badge/PHP-8.0%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
+[![CodeIgniter](https://img.shields.io/badge/CodeIgniter-4-EE4623?style=for-the-badge&logo=codeigniter&logoColor=white)](https://codeigniter.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Supabase](https://img.shields.io/badge/Supabase-DB%20Hosting-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+</div>
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+Maze Hunt é um projeto em desenvolvimento voltado para criar uma plataforma de **e-commerce inclusiva e acessível**, com foco em usabilidade, integração com APIs externas e arquitetura escalável.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+---
 
-## Installation & updates
+## 🧩 Tecnologias Utilizadas
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+**Back-end**
+- PHP 8+
+- CodeIgniter 4
+- PostgreSQL
+- Supabase (banco de dados hospedado)
+- Composer (gerenciador de dependências)
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+**Ambiente de Desenvolvimento**
+- Linux Mint / WSL2
+- Git + GitHub
+- VS Code
 
-## Setup
+---
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+## ⚙️ Configuração do Projeto
 
-## Important Change with index.php
+### 1. Clonar o repositório
+```bash
+git clone https://github.com/seu-usuario/maze-hunt.git
+cd maze-hunt
+````
+2. Instalar dependências
+```bash
+composer install
+````
+3. Configurar o ambiente
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+Crie o arquivo .env na raiz do projeto:
+```bash
+cp env .env
+````
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+Edite o .env conforme sua configuração local:
+```bash
+CI_ENVIRONMENT = development
+app.baseURL = 'http://localhost:8080/'
+app.timezone = America/Sao_Paulo
 
-**Please** read the user guide for a better explanation of how CI4 works!
+# PostgreSQL (Supabase)
+database.default.DSN = "pgsql:host=db.uprtrilidttpmlmmtche.supabase.co;port=5432;dbname=postgres;user=postgres;password=SENHA_AQUI;sslmode=require"
+database.default.DBDriver = Postgre
+database.default.charset = UTF8
+````
+▶️ Executar o Servidor Local:
+```bash
+php spark serve
+````
 
-## Repository Management
+O projeto estará acessível em:
+👉 http://localhost:8080/
+```
+🗂 Estrutura de Pastas
+📦 app/
+ ┣ 📂 Controllers/
+ ┣ 📂 Models/
+ ┣ 📂 Views/
+ ┣ 📂 Config/
+ ┗ 📂 Services/
+📦 public/
+📦 writable/
+📦 vendor/
+.env
+composer.json
+````
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+##  Banco de Dados
+O projeto utiliza PostgreSQL hospedado no Supabase, podendo ser migrado futuramente para outro servidor PostgreSQL.
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+| Tabela            | Descrição                                                      |
+| -------------------- | -------------------------------------------------------------- |
+| **promotions**         | Armazena promoções e ofertas integradas de lojas parceiras.   |
+| **users**         |Cadastro básico de usuários (em planejamento). |
+| **orders** |  Registros de pedidos (em fase de análise).    |
 
-## Server Requirements
+---
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+## 🌍 Deploy
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+- Atualmente o deploy ainda está em fase de estudo. A aplicação foi desenvolvida para rodar facilmente em qualquer servidor compatível com PHP 8+ e PostgreSQL (Render, Railway, Supabase Functions, VPS, etc.). 
+> 🔄 Este README foi estruturado para permitir atualização rápida assim que o ambiente de produção for definido.
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+---
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+## 🧠 Futuro do Projeto
+- Integração com APIs de marketplaces (Amazon, Shopee, AliExpress, etc.) 
+- Sistema de autenticação com OAuth2 / JWT
+- Dashboard administrativo acessível
+- Implementação de padrões WCAG 2.1 (acessibilidade digital)
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+
+## 🧾 Licença
+
+Este projeto está licenciado sob os termos da **MIT License**.
+Consulte o arquivo [LICENSE](./LICENSE) para mais informações.
+
+---
+
+## 👨‍💻 Autor
+
+**Erick Xavier**
+Desenvolvedor Back-End Java • Fullstack em formação
+📍 Viçosa – MG
+🔗 [LinkedIn](https://linkedin.com/in/erickxavierdev)
+💻 [GitHub](https://github.com/erickdevz)
+📫 [erickxavier.dev@gmail.com](mailto:erickxavier.dev@gmail.com)
+
+---
